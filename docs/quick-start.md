@@ -37,19 +37,27 @@ disqusShortname = "..."
 Type in your terminal:
 
 ```sh
-hugo new about/desc.md
+hugo new about/me.md
 ```
 
 Write somethings **about you**:
 
 ```md
 ---
-title: desc
+title: About Me
 ---
 
 Hi, my name is Yue Yang.
 
 This is my blog.
+```
+
+Then create an `index.md` in the about folder and put below contents into it:
+
+```md
+---
+headless: true
+---
 ```
 
 Then, click the button on the top left corner of the page. You will see what you just wrote.
@@ -87,10 +95,9 @@ The remaining content of your post.
 
 You only need to change `author`, `cover`, `categories` and `tags` fields, the others will generate automatically.
 
-- author => **Your name**
-- cover => **Current post's image**, for _quick start_, now you can delete this line, because the theme has been placed some default images for posts.
-- categories => If you're not ready, place "category1"
-- tags => If you're not ready, place "tag1"
+- author: **Your name**
+- cover: **Current post's image**, for _quick start_, now you can delete this line, because the theme has been placed some default images for posts.
+- categories and tags: if you haven’t thought about it, you can ignore them for now.
 
 At last, remove `draft: true` and run `hugo` to generate your site.
 

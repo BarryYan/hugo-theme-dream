@@ -1,4 +1,16 @@
-# 🌱hugo-theme-dream
+# 🌱 hugo-theme-dream
+
+> Note: after v1.1.0, it's needed to set the `about` folder to `Headless Bundle`.
+
+Related docs:
+
+<https://g1eny0ung.site/hugo-theme-dream/#/quick-start?id=add-quotabout-mequo>
+
+<https://g1eny0ung.site/hugo-theme-dream/#/about-page>
+
+<https://gohugo.io/content-management/page-bundles/#headless-bundle>
+
+---
 
 > **The Major Update in 2019-11-10:**
 
@@ -24,21 +36,21 @@ demo: [https://themes.gohugo.io/theme/hugo-theme-dream/](https://themes.gohugo.i
 
 All tags of this theme:
 
-* flip
-* masonry layouts
-* i18n
-* blog
-* google-analytics
-* disqus
-* responsive
-* copyright
-* avatar
-* motto
-* social links
-* creative
-* personal
-* light mode
-* dark mode
+- flip
+- masonry layouts
+- i18n
+- blog
+- google-analytics
+- disqus
+- responsive
+- copyright
+- avatar
+- motto
+- social links
+- creative
+- personal
+- light mode
+- dark mode
 
 ## Documentation
 

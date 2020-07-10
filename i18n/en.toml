@@ -45,3 +45,6 @@ other = 'Previous page'
 
 [nextPage]
 other = 'Next page'
+
+[saveAsImage]
+other = "Save as image"

@@ -2,7 +2,7 @@
   <section class="ui top attached center aligned segment">
     <div class="ui small circular image">
       {{ if isset .Site.Params "avatar" }}
-        <img src="{{ .Site.Params.avatar }}">
+        <img src="{{ .Site.Params.avatar | relURL }}">
       {{ end }}
     </div>
 
@@ -13,14 +13,14 @@
 
     <div class="ui horizontal list">
       {{ if gt (len (where .Site.RegularPages "Section" "==" "posts")) 0 }}
-      <a class="item" href="/posts">
+      <a class="item" href="{{ "/posts" | relURL }}">
         <i class="archive icon" title="{{ i18n "archives" }}"></i>
       </a>
       {{ end }}
-      <a class="item" href="/tags">
+      <a class="item" href="{{ "/tags" | relURL }}">
         <i class="tags icon" title="{{ i18n "allTags" }}"></i>
       </a>
-      <a class="item" href="/categories">
+      <a class="item" href="{{ "/categories" | relURL }}">
         <i class="th list icon" title="{{ i18n "allCategories" }}"></i>
       </a>
     </div>
@@ -47,7 +47,7 @@
           {{ range $taxonomy.Pages }}
             <div class="item">
               <div class="content">
-                <a href="{{ .Permalink }}" class="item">{{ .LinkTitle }}</a>
+                <a href="{{ .RelPermalink }}" class="item">{{ .LinkTitle }}</a>
               </div>
             </div>
           {{ end }}
@@ -58,10 +58,14 @@
   </section>
   {{ end }}
 
+  <section class="ui attached segment header-socials">
+    {{ partial "socials.html" (dict "Site" .Site "IconSize" "") }}
+  </section>
+
   <section class="ui bottom attached center aligned segment">
-      {{ if .Site.Params.siteStartYear }}
+    {{ if .Site.Params.siteStartYear }}
       <p>© {{ if eq now.Year .Site.Params.siteStartYear }}{{ now.Year }}{{ else }}{{ .Site.Params.siteStartYear }} - {{ now.Year }}{{ end }} {{ .Site.Title }}</p>
-      {{ else }}
+    {{ else }}
       <p>© {{ now.Year }} {{ .Site.Title }}</p>
       {{ end }}
       <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/barryyan/hugo-theme-dream" target="_blank">Dream</a>.</p>
