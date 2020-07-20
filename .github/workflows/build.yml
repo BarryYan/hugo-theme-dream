@@ -27,11 +27,8 @@ jobs:
       run: npm i && npm run prod
 
     - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./
-        publish_branch: master  
-        user_name: 'github-actions[bot]'
-        user_email: 'github-actions[bot]@users.noreply.github.com'
-        commit_message: 'Deploy commit: ${{ github.event.head_commit.message }}'
+      run: |
+          git config --global user.name 'Barry Yan'
+          git config --global user.email 'barry.yansh@gmail.com'
+          git commit -am "Automated build"
+          git push
